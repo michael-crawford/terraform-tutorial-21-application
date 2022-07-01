@@ -57,6 +57,15 @@ output "bastion_public_ip" {
 }
 
 ################################################################################
+# Certificate Outputs
+################################################################################
+
+output "acm_certificate_arn" {
+  description = "The ARN of the certificate"
+  value       = module.acm_certificate.acm_certificate_arn
+}
+
+################################################################################
 # Application Load Balancer Outputs
 ################################################################################
 # We don't need all of these, reduce to minimum

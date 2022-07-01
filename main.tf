@@ -178,6 +178,24 @@ resource "aws_eip" "bastion_eip" {
 }
 
 ################################################################################
+# Certificates
+################################################################################
+
+module "acm_certificate" {
+  source  = "terraform-aws-modules/acm/aws"
+  version = "3.0.0"
+
+  domain_name  = trimsuffix(data.aws_route53_zone.domain.name, ".")
+  zone_id      = data.aws_route53_zone.domain.zone_id
+
+  subject_alternative_names = [
+    "*.${var.domain}"
+  ]
+
+  tags = local.common_tags
+}
+
+################################################################################
 # Application Load Balancers
 ################################################################################
 
@@ -233,7 +251,7 @@ module "alb" {
     {
       port               = 443
       protocol           = "HTTPS"
-      certificate_arn    = module.certificate.acm_certificate_arn
+      certificate_arn    = module.acm_certificate.acm_certificate_arn
       action_type = "fixed-response"
       fixed_response = {
         content_type = "text/plain"
