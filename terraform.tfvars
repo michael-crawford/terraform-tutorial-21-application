@@ -1,0 +1,5 @@
+region = "us-east-2"
+environment = "Production"
+company = "MJCConsulting"
+project = "Tutorial21"
+domain = "x.mcrawford.mjcconsulting.com"
