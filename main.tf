@@ -203,7 +203,7 @@ module "alb" {
   source  = "terraform-aws-modules/alb/aws"
   version = "6.0.0"
 
-  name = "${var.environment}-${var.application}-ApplicationLoadBalancer"
+  name = "${var.environment}-${var.application}-ALB"
 
   load_balancer_type = "application"
 
