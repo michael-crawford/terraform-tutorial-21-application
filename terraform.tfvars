@@ -1,5 +1,6 @@
 region = "us-east-2"
 environment = "Production"
 company = "MJCConsulting"
+application = "App1"
 project = "Tutorial21"
 domain = "x.mcrawford.mjcconsulting.com"

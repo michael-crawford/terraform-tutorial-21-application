@@ -11,7 +11,7 @@ related VPC workspace
     - Repo: michael-crawford/terraform-tutorial-21-application
     - Settings:
       - Name: MJCConsulting-MCrawford-Sandbox-terraform-tutorial-21-application
-      - Description: <blank>
+      - Description:
       - Apply Method: Manual apply
       - Run Triggers: Always trigger runs
       - Pull Requests: Automatic speculative plans
@@ -19,4 +19,3 @@ related VPC workspace
 1. Trigger initial run
 
 1. Approve initial apply
-

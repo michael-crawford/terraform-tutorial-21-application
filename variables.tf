@@ -22,8 +22,32 @@ variable "project" {
   default     = "Tutorial-21"
 }
 
+variable "application" {
+  description = "Application Name"
+  type        = string
+  default     = "App1"
+}
+
 variable "domain" {
   description = "Domain Name"
   type        = string
   default     = "x.mcrawford.mjcconsulting.com"
+}
+
+variable "instance_type" {
+  description = "EC2 Instance Type"
+  type        = string
+  default     = "t3a.nano"
+}
+
+variable "instance_keypair" {
+  description = "AWS EC2 Key Pair"
+  type        = string
+  default     = "administrator"
+}
+
+variable "instance_count" {
+  description = "AWS EC2 Instance Count"
+  type        = number
+  default     = 1
 }
